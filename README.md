@@ -1,10 +1,10 @@
 ```
- ██████╗██████╗ ██████╗      ██████╗  ██████╗ 
-██╔════╝██╔══██╗██╔══██╗    ██╔═████╗██╔═████╗
-██║     ██████╔╝██████╔╝    ██║██╔██║██║██╔██║
-██║     ██╔═══╝ ██╔═══╝     ████╔╝██║████╔╝██║
-╚██████╗██║     ██║         ╚██████╔╝╚██████╔╝
- ╚═════╝╚═╝     ╚═╝          ╚═════╝  ╚═════╝ 
+::::██████╗██████╗:██████╗:::::::██████╗::██████╗:::: 
+:::██╔════╝██╔══██╗██╔══██╗:::::██╔═████╗██╔═████╗:::
+:::██║:::::██████╔╝██████╔╝:::::██║██╔██║██║██╔██║:::
+:::██║:::::██╔═══╝ ██╔═══╝ :::::████╔╝██║████╔╝██║:::
+:::╚██████╗██║:::::██║::::::::::╚██████╔╝╚██████╔╝:::
+::::╚═════╝╚═╝:::::╚═╝:::::::::::╚═════╝::╚═════╝:::: 
 ```
 
 *This first module of C++ is designed to help you understand the\
@@ -21,9 +21,9 @@ Object Oriented Programming!*
   * **[design requirements](#alguns-requisitos-de-design)**
   * **[Read me](#read-me)**
 * ### [Roadmap](./dcs/roadmap.md)
+* ### [Study resources](#study-resources-1)
 <!-- * ### [Usage]() -->
 <!-- * ### [Workflow](#workflow-1) -->
-* ### [Study resources](#study-resources-1)
 <!-- * ### [Tools](#tools-1) -->
 
 ## Introduction
@@ -60,6 +60,9 @@ Object Oriented Programming!*
 ## Study resources
 Resource | Source
 ---------|:-----:
+[C++ Roadmap](https://roadmap.sh/cpp) | `roadmap.sh`
+[Os 4 Pilares da Orientação a Objetos](https://www.youtube.com/live/j2w8sMWhngo?si=eVnd-m_T-J3S8XpA) | `YouTube`
 [Wiki](https://github.com/qingqingqingli/CPP/wiki) | `GitHub`
 [Modules 00-04](https://github.com/pin3dev/42_CPP_Modules_00-04) | `GitHub` 
 [piscine CPP](https://github.com/paulahemsi/piscine_cpp) | `GitHub`
+

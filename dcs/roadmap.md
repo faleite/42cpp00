@@ -9,9 +9,9 @@ markmap:
 ## **CPP**
 ### [**README**](dcs/README.md)
 ### ==cpp00== <!-- markmap: foldAll -->
-- [*Namespaces*](dcs/namespaces.md)
-- [*Stdio streams*]
-- [*Class and instance*]
+- [*Namespaces*](https://github.com/faleite/42cpp00/tree/main/dcs#namespaces)
+- [*Stdio streams*](https://github.com/faleite/42cpp00/tree/main/dcs#stdio-streams)
+- [*Class and instance*](https://github.com/faleite/42cpp00/tree/main/dcs#class-and-instance)
 - [*Member attributes and member function*]
 - [*This*]
 - [*Initialization list*]

@@ -7,14 +7,14 @@ markmap:
 ---
 
 ## **CPP**
-### [**README**](dcs/README.md)
+### [**README**](https://github.com/faleite/42cpp00)
 ### ==cpp00== <!-- markmap: foldAll -->
 - [*Namespaces*](https://github.com/faleite/42cpp00/tree/main/dcs#namespaces)
 - [*Stdio streams*](https://github.com/faleite/42cpp00/tree/main/dcs#stdio-streams)
 - [*Class and instance*](https://github.com/faleite/42cpp00/tree/main/dcs#class-and-instance)
-- [*Member attributes and member function*]
-- [*This*]
-- [*Initialization list*]
+- [*Member attributes and member function*]()
+- [*This*]()
+- [*Initialization list*]()
 - [*Const*]
 - [*Visibility*]
 - [*Class vs struct*]

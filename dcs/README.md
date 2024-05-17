@@ -170,3 +170,139 @@ int	main(void)
 Constructor called
 Destructor called
 ```	
+
+## Member attributes and member function
+- `Member attributes` são variáveis que são declaradas dentro de uma classe e e pode usar em uma instância desta classe. Eles são acessíveis a qualquer função que pertença à classe.
+- `Member functions` são funções que são declaradas dentro de uma classe. Uma função tem sua definição ou protótipo dentro da definição da classe como qualquer outra variável. Ele opera em qualquer objeto da classe da qual é membro e tem acesso a todos os membros de uma classe desse objeto.
+***Exemplo:***
+```cpp
+#include <iostream>
+
+using namespace std;
+
+class Box {
+   public:
+      double length;         // Length of a box
+      double breadth;        // Breadth of a box
+      double height;         // Height of a box
+
+      // Member functions declaration
+      double getVolume(void);
+      void setLength( double len );
+      void setBreadth( double bre );
+      void setHeight( double hei );
+};
+
+// Member functions definitions
+double Box::getVolume(void) {
+   return length * breadth * height;
+}
+
+void Box::setLength( double len ) {
+   length = len;
+}
+void Box::setBreadth( double bre ) {
+   breadth = bre;
+}
+void Box::setHeight( double hei ) {
+   height = hei;
+}
+
+// Main function for the program
+int main() {
+   Box Box1;                // Declare Box1 of type Box
+   Box Box2;                // Declare Box2 of type Box
+   double volume = 0.0;     // Store the volume of a box here
+ 
+   // box 1 specification
+   Box1.setLength(6.0); 
+   Box1.setBreadth(7.0); 
+   Box1.setHeight(5.0);
+
+   // box 2 specification
+   Box2.setLength(12.0); 
+   Box2.setBreadth(13.0); 
+   Box2.setHeight(10.0);
+
+   // volume of box 1
+   volume = Box1.getVolume();
+   cout << "Volume of Box1 : " << volume <<endl;
+
+   // volume of box 2
+   volume = Box2.getVolume();
+   cout << "Volume of Box2 : " << volume <<endl;
+   return 0;
+}
+```
+```bash
+# Output
+Volume of Box1: 210
+Volume of Box2: 1560
+```
+
+## This 'pointer' (the keyword self)
+- `this` é um ponteiro que aponta para o objeto atual. `this` é um ponteiro constante que mantém o endereço do objeto atual. Em C++, cada objeto obtém sua própria cópia dos membros dos dados e todos os objetos compartilham uma única cópia das funções-membro. Para se referir à sua instância atual, use o ponteiro de instância especial `this`.
+- Uma função membro possui apenas uma cópia e é usada por vários objetos. Como os membros de dados adequados são acessados ​​e atualizados? O compilador fornece um ponteiro implícito junto com os nomes das funções como `this`.
+- referência: [***this poniter in C++***](https://www.shiksha.com/online-courses/articles/this-pointer-in-c/)
+
+## Initialization list
+- As listas de inicialização em C++ são uma maneira de inicializar os membros de dados de uma classe. Elas são usadas principalmente em construtores para inicializar várias propriedades de um objeto.
+
+***Exemplo.class.hpp***
+```cpp
+#ifndef SAMPLE_CLASS_H
+# define SAMPLE_CLASS_H
+
+class Sample {
+
+public:
+	//attributes
+	char a1;
+	int a2;
+	float a3;
+
+	Sample(char p1, int p2, float p3);
+	~Sample(void);
+};
+
+#endif
+```
+***Exemplo.class.cpp***
+```cpp
+#include <iostream>
+#include "Sample.class.hpp"
+
+//initialise the attributes in a class
+Sample::Sample(char p1, int p2, float p3) : a1(p1), a2(p2), a3(p3) // initialisation list
+{
+	std::cout << "Constructor called" << std::endl;
+	std::cout << "this->a1 = " << this->a1 << std::endl;
+	std::cout << "this->a2 = " << this->a2 << std::endl;
+	std::cout << "this->a3 = " << this->a3 << std::endl;
+}
+
+Sample::~Sample(void) {
+	std::cout << "Destructor called" << std::endl;
+	return;
+}
+```
+***main.cpp***
+```cpp
+#include <iostream>
+#include "Sample.class.hpp"
+
+int	main(void)
+{
+	Sample	instance('a', 42, 4.2f);
+
+	return (0);
+}
+```
+```bash
+# Output
+Constructor called
+this->a1 = a
+this->a2 = 42
+this->a3 = 4.2
+Destructor called
+```	

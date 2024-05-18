@@ -13,11 +13,11 @@ markmap:
 - [***Stdio streams***](https://github.com/faleite/42cpp00/tree/main/dcs#stdio-streams)
 - [***Class and instance***](https://github.com/faleite/42cpp00/tree/main/dcs#class-and-instance)
 - [***Member attributes\
-and member function***]()
-- [***This***]()
-- [***Initialization list***]()
-- [***Const***]()
-- [***Visibility***]()
+and member function***](https://github.com/faleite/42cpp00/blob/main/dcs/README.md#member-attributes-and-member-function)
+- [***This***](https://github.com/faleite/42cpp00/blob/main/dcs/README.md#this-pointer-the-keyword-self)
+- [***Initialization list***](https://github.com/faleite/42cpp00/blob/main/dcs/README.md#initialization-list)
+- [***Const***](https://github.com/faleite/42cpp00/blob/main/dcs/README.md#const)
+- [***Visibility***](https://github.com/faleite/42cpp00/blob/main/dcs/README.md#visibility)
 - [***Class vs struct***]
 - [***Accessors***]
 - [***Comparisons***]

@@ -305,4 +305,199 @@ this->a1 = a
 this->a2 = 42
 this->a3 = 4.2
 Destructor called
-```	
+```
+
+## Const
+- `const` é uma palavra-chave em C++ que é usada para tornar uma variável constante. Uma variável constante é uma variável cujo valor não pode ser alterado. Uma variável constante deve ser inicializada no momento da declaração.
+- `const data menbers` deve ser inicializado usando `initialization list`. Nenhuma memória é alocada separadamente para o membro de dados const. Ele está dobrado na tabela de símbolos e por isso precisamos inicializá-lo
+- `const data members` também é um construtor de cópia. Não precisamos ligar para o operador de atribuição, o que significa que evitamos uma operação extra.
+- Quanto maior for o seu código conste read only, mais robusto será o seu código a longo prazo.
+- referência: [***const in C++***](https://pt.stackoverflow.com/questions/79909/declara%C3%A7%C3%A3o-const-no-final-de-fun%C3%A7%C3%A3o-em-c-e-const-antes-do-argumento-no-m%C3%A9todo)
+
+***Exemplo: Sample.class.hpp***
+```cpp
+#ifndef SAMPLE_CLASS_H
+# define SAMPLE_CLASS_H
+
+class Sample
+{
+public:
+
+	float const pi;
+	int qd;
+
+	Sample(float const f);
+	~Sample(void);
+
+	// const entre ) e ; -> a instância da classe nunca será alterada
+	void bar(void) const;
+};
+
+#endif
+```
+***Exemplo: Sample.class.cpp***
+```cpp
+#include <iostream>
+#include "Sample.class.hpp"
+
+// it's not assigning f value to pi attribute
+// it's initialising pi attribute to the f value
+Sample::Sample(float const f) : pi(f), qd(42) {
+
+	std::cout << "Constructor called" << std::endl;
+	return;
+}
+
+Sample::~Sample(void) {
+
+	std::cout << "Destructor called" << std::endl;
+	return;
+}
+
+// this is central to CPP
+// define const when your member function should never be changed in the \
+// current instance of your class
+void	Sample::bar(void) const {
+
+	std::cout << "this->pi = " << this->pi << std::endl;
+	std::cout << "this->qd = " << this->qd << std::endl;
+
+	// this assignment below won't work, as it's a const function
+	// this->qd = 0;
+	return;
+}
+```
+***Exemplo: main.cpp***
+```cpp
+#include <iostream>
+#include "Sample.class.hpp"
+
+int main() {
+
+	Sample instance(3.14f);
+
+	instance.bar();
+
+	return (0);
+}
+```
+```bash
+# Output
+Constructor called
+this->pi = 3.14
+this->qd = 42
+Destructor called
+```
+
+## Visibility
+- `Visibility` é uma propriedade de um membro de uma classe que determina se ele pode ser acessado de fora da classe. Existem três tipos de visibilidade em C++: `public`, `private` e `protected`.
+- `public e private` permitirá que você controle o encapsulamento dos membros da classe. Isso significa que os atributos e funções-membro só serão visíveis de dentro da classe ou de fora.
+- `Public` atributos e funções podem ser acessados ​​dentro e fora da classe.
+- `Private` atributos e funções só são acessíveis de dentro da classe. Esses atributos e funções são perfeitamente invisíveis e inacessíveis de fora da classe, caso contrário, o código não será compilado.
+- `Tenha em mente`: para atributos ou funções que não têm nada a ver com o usuário, mantenha-os privados na classe. Ao planejar uma classe, pense sempre no que manter internamente ou expor para fora.
+- referência: [***Visibility in C++***](https://www.scaler.com/topics/private-public-and-protected-are-all/)
+
+***Exemplo: Sample.class.hpp***
+```cpp
+#ifndef SAMPLE_CLASS_H
+# define SAMPLE_CLASS_H
+
+class Sample
+{
+public:
+
+	int publicFoo;
+
+	// need to consider what makes more sense to place the constructor \
+	// and destructor in private or public
+	Sample(void);
+	~Sample(void);
+
+	void publicBar(void) const;
+
+private:
+
+	// use _ prefix for all private identifier
+	// it gives reader a quick idea of which is public or private
+	int _privateFoo;
+
+	void _privateBar(void) const;
+};
+
+#endif
+```
+***Exemplo: Sample.class.cpp***
+```cpp
+#include <iostream>
+#include "Sample.class.hpp"
+
+// this can also be written with initialisation list
+Sample::Sample(void)
+{
+	std::cout << "Constructor called" << std::endl;
+
+	this->publicFoo = 0;
+	std::cout << "this->publicFoo = " << this->publicFoo <<std::endl;
+	this->_privateFoo = 0;
+	std::cout << "this->_privateFoo = " << this->_privateFoo <<std::endl;
+
+	this->publicBar();
+	this->_privateBar();
+
+	return;
+}
+
+Sample::~Sample(void)
+{
+	std::cout << "Destructor called" << std::endl;
+	return;
+}
+
+void	Sample::publicBar(void) const
+{
+	std::cout << "Member function publicBar called" << std::endl;
+	return;
+}
+
+void	Sample::_privateBar(void) const
+{
+	std::cout << "Member function _privateBar called" << std::endl;
+	return;
+}
+```
+
+***Exemplo: main.cpp***
+```cpp
+#include <iostream>
+#include "Sample.class.hpp"
+
+int	main(void)
+{
+	Sample	instance;
+
+	instance.publicFoo = 42;
+	std::cout << "instance.publicFoo = " << instance.publicFoo << std::endl;
+	// compilation error when you want to access private attributes
+	// instance._privateFoo = 42;
+	// std::cout << "instance._privateFoo = " << instance._privateFoo << std::endl;
+
+	instance.publicBar();
+	// compilation error when you want to access private function
+	// instance._privateBar();
+
+	return (0);
+}
+```
+```bash
+# Output
+Constructor called
+# inside the constructor: can access both private and public attributes / functions
+this->publicFoo = 0
+this->_privateFoo = 0
+Member function publicBar called
+Member function _privateBar called
+# outside the constructor: can only access public attributes / functions
+instance.publicFoo = 42
+Member function publicBar called
+Destructor called
+```

@@ -501,3 +501,11 @@ instance.publicFoo = 42
 Member function publicBar called
 Destructor called
 ```
+
+## Class vs struct
+- `Class` e `struct` são usados para definir classes em C++. A única diferença entre `class` e `struct` é que a visibilidade padrão de membros e bases de classe é `private` em `class` e `public` em `struct`.
+- Uma classe também pode conter funções (chamadas `methods` em C++). Os atributos e métodos dos membros ficam ocultos do mundo externo, a menos que sua declaração siga um rótulo público
+- Métodos especiais (`constructore` `destructor`) em C++. Eles são executados automaticamente quando um objeto (uma instância da classe) é criado e destruído.
+- Operadores para trabalhar no novo tipo de dados podem ser definidos usando métodos especiais (`member functions`)
+- Uma classe pode ser usada como base para a definição de outra (`heranca`)
+- Declarar uma variável do novo tipo (um objeto) requer apenas o nome da classe. A palavra-chave `class` não é obrigatória.

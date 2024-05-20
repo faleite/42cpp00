@@ -18,7 +18,7 @@ and member function***](https://github.com/faleite/42cpp00/blob/main/dcs/README.
 - [***Initialization list***](https://github.com/faleite/42cpp00/blob/main/dcs/README.md#initialization-list)
 - [***Const***](https://github.com/faleite/42cpp00/blob/main/dcs/README.md#const)
 - [***Visibility***](https://github.com/faleite/42cpp00/blob/main/dcs/README.md#visibility)
-- [***Class vs struct***]
+- [***Class vs struct***]()
 - [***Accessors***]
 - [***Comparisons***]
 - [***Non member attributes and\

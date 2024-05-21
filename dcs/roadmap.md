@@ -19,11 +19,11 @@ and member function***](https://github.com/faleite/42cpp00/blob/main/dcs/README.
 - [***Const***](https://github.com/faleite/42cpp00/blob/main/dcs/README.md#const)
 - [***Visibility***](https://github.com/faleite/42cpp00/blob/main/dcs/README.md#visibility)
 - [***Class vs struct***]()
-- [***Accessors***]
-- [***Comparisons***]
+- [***Accessors (getters)***]()
+- [***Comparisons***]()
 - [***Non member attributes and\
-non member functions***]
-- [***Pointers to members***]
+non member functions***]()
+- [***Pointers to members***]()
 
 <!-- - **Namespaces**
 - **classes**

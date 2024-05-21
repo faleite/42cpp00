@@ -44,8 +44,8 @@ int	main(void){
 	return (0);
 }
 ```
+***Output***
 ```bash
-# Output
 gl_var:			[1]
 f():			[2]
 
@@ -165,8 +165,8 @@ int	main(void)
 	// destructor is called when the instance goes out of scope
 }
 ```
+***Output***
 ```bash
-# Output
 Constructor called
 Destructor called
 ```	
@@ -234,8 +234,8 @@ int main() {
    return 0;
 }
 ```
+***Output***
 ```bash
-# Output
 Volume of Box1: 210
 Volume of Box2: 1560
 ```
@@ -298,8 +298,8 @@ int	main(void)
 	return (0);
 }
 ```
+***Output***
 ```bash
-# Output
 Constructor called
 this->a1 = a
 this->a2 = 42
@@ -381,8 +381,8 @@ int main() {
 	return (0);
 }
 ```
+***Output***
 ```bash
-# Output
 Constructor called
 this->pi = 3.14
 this->qd = 42
@@ -488,8 +488,8 @@ int	main(void)
 	return (0);
 }
 ```
+***Output***
 ```bash
-# Output
 Constructor called
 # inside the constructor: can access both private and public attributes / functions
 this->publicFoo = 0
@@ -509,3 +509,406 @@ Destructor called
 - Operadores para trabalhar no novo tipo de dados podem ser definidos usando métodos especiais (`member functions`)
 - Uma classe pode ser usada como base para a definição de outra (`heranca`)
 - Declarar uma variável do novo tipo (um objeto) requer apenas o nome da classe. A palavra-chave `class` não é obrigatória.
+
+## Accessors (getters and setters)
+- Um `accessors` é uma função membro que permite a alguém recuperar o conteúdo de um membro de dados protegido.
+  - O `accessors` deve ter `mesmo tipo` como variável retornada.
+  - O `accessors` não precisa ter argumentos
+  - Deve existir `convenção de nomes` e o nome do acessador deve começar com o prefixo `get`.
+- ***Na prática, todos os atributos de uma classe são privados***. Getters são a interface entre o usuário e os atributos privados, para garantir que os valores estejam sempre corretos.
+- Eles geralmente têm o prefixo `get` e `set`. Getter só pode acessar no modo somente leitura e não alterará o conteúdo da classe. Ele permite que você tenha algum controle sobre o que dar ao usuário. Ele também define o controle para as entradas do usuário e garante que elas façam sentido.
+
+***Exemplo: Sample.class.hpp***
+```cpp
+#ifndef SAMPLE_CLASS_H
+# define SAMPLE_CLASS_H
+
+class Sample
+{
+public:
+
+	Sample(void);
+	~Sample(void);
+
+	int	getFoo(void) const;
+	void setFoo(int v);
+
+private:
+
+	int	_foo;
+};
+
+#endif
+```
+***Exemplo: Sample.class.cpp***
+```cpp
+#include <iostream>
+#include "Sample.class.hpp"
+
+Sample::Sample(void)
+{
+	std::cout << "Constructor called" << std::endl;
+
+	this->setFoo(0);
+	std::cout << "this->getFoo() = " << this->getFoo() << std::endl;
+
+	return;
+}
+
+Sample::~Sample(void)
+{
+	std::cout << "Destructor called" << std::endl;
+	return;
+}
+
+// grant only read-only access to the attribute
+int	Sample::getFoo(void) const
+{
+	// return a copy of the _foo attribute
+	return this->_foo;
+}
+
+// this way allows the user to change the _foo attribute
+void	Sample::setFoo(int v)
+{
+	// don't allow _foo to have a negative value
+	if (v >= 0)
+		this->_foo = v;
+	return;
+}
+```
+***Exemplo: main.cpp***
+```cpp
+#include <iostream>
+#include "Sample.class.hpp"
+
+int	main(void)
+{
+	Sample	instance;
+
+	instance.setFoo(42);
+	std::cout << "instance.getFoo() = " << instance.getFoo() << std::endl;
+	instance.setFoo(-42);
+	std::cout << "instance.getFoo() = " << instance.getFoo() << std::endl;
+
+	return (0);
+}
+```
+***Output***
+```bash
+Constructor called
+this->getFoo() = 0
+instance.getFoo() = 42
+instance.getFoo() = 42
+Destructor called
+```
+
+## Comparisons (estrutural vs. física)
+- Existem `structural` igualdade e `physical` igualdade.
+  - `Structural` igualdade significa que dois objetos têm conteúdo equivalente
+  - `Physical/referential` igualdade significa que os ponteiros para dois objetos são iguais (use == para verificar em C++)
+
+***Exemplo: Sample.class.hpp***
+```cpp
+#ifndef SAMPLE_CLASS_H
+# define SAMPLE_CLASS_H
+
+class Sample
+{
+public:
+	Sample(int v);
+	~Sample(void);
+
+	int	getFoo(void) const;
+	// taking as a parameter (the address of a sample instance). Making a
+	// comparison between the current instance and the passed parameter instance
+	int	compare(Sample *other) const ;
+
+private:
+	int	_foo;
+};
+
+#endif
+```
+***Exemplo: Sample.class.cpp***
+```cpp
+#include <iostream>
+#include "Sample.class.hpp"
+
+Sample::Sample(int v) : _foo(v)
+{
+	std::cout << "Constructor called" << std::endl;
+	return;
+}
+
+Sample::~Sample(void)
+{
+	std::cout << "Destructor called" << std::endl;
+	return;
+}
+
+int	Sample::getFoo(void) const
+{
+	return this->_foo;
+}
+
+int	Sample::compare(Sample *other) const
+{
+	if (this->_foo < other->getFoo())
+		return (-1);
+	else if (this->_foo > other->getFoo())
+		return (1);
+	return (0);
+}
+```
+***Exemplo: main.cpp***
+```cpp
+#include <iostream>
+#include "Sample.class.hpp"
+
+int	main(void)
+{
+	// physically different but structurally identical instances
+	Sample instance1(42);
+	Sample instance2(42);
+
+	if (&instance1 == &instance1)
+		std::cout << "instance 1 and instance 1 are physically equal" << std::endl;
+	else
+		std::cout << "instance 1 and instance 1 are not physically equal" << std::endl;
+
+	if (&instance1 == &instance2)
+		std::cout << "instance 1 and instance 2 are physically equal" << std::endl;
+	else
+		std::cout << "instance 1 and instance 2 are not physically equal" << std::endl;
+
+	if (instance1.compare(&instance1) == 0)
+		std::cout << "instance 1 and instance 1 are structurally equal" << std::endl;
+	else
+		std::cout << "instance 1 and instance 1 are not structurally equal" << std::endl;
+
+	if (instance1.compare(&instance2) == 0)
+		std::cout << "instance 1 and instance 2 are structurally equal" << std::endl;
+	else
+		std::cout << "instance 1 and instance 2 are not structurally equal" << std::endl;
+
+	return (0);
+}
+```
+***Output***
+```bash
+Constructor called
+Constructor called
+instance 1 and instance 1 are physically equal
+instance 1 and instance 2 are not physically equal
+instance 1 and instance 1 are structurally equal
+instance 1 and instance 2 are structurally equal
+Destructor called
+Destructor called
+```
+
+## Non member attributes and non member functions
+- `member attributes` e `member functions` estão presentes dentro de uma classe. Significa que a classe precisa ser instanciada, para poder utilizar este atributo/função. Cada atributo será diferente em cada instância.
+- `non-member attributes` e `non-member functions` existem no nível da classe, não no nível da instância. Isso significa que todos os objetos da classe compartilham o mesmo atributo/função. O atributo será o mesmo em todas as instâncias.
+- Outra terminologia:
+  - `Instance` variáveis/funções referem-se a `member` atributos/funções.
+  - `Class` variáveis/funções referem-se a `non member` atributos/funções.
+- `static` é uma palavra-chave em C++ que é usada para declarar um membro de uma classe como estático. Um membro estático é compartilhado por todos os objetos de uma classe. Isso significa que, se você modificar o membro estático, ele será modificado para todos os objetos da classe.
+***Exemplo: Sample.class.hpp***
+```cpp
+#ifndef SAMPLE_CLASS_H
+# define SAMPLE_CLASS_H
+
+class Sample {
+
+public:
+
+	Sample(void);
+	~Sample(void);
+
+	// non member function
+	// when the function does not have anything to do with the other class
+	// functions, but you want it to be part of the class
+	static int getNbInst(void);
+
+private:
+
+	// non member attribute
+	// number of instances: this information only makes sense at the class level
+	static int _nbInst;
+
+};
+
+#endif
+```
+***Exemplo: Sample.class.cpp***
+```cpp
+#include <iostream>
+#include "Sample.class.hpp"
+
+Sample::Sample(void)
+{
+	std::cout << "Constructor called" << std::endl;
+	Sample::_nbInst += 1;
+
+	return;
+}
+
+Sample::~Sample(void)
+{
+	std::cout << "Destructor called" << std::endl;
+	Sample::_nbInst -= 1;
+	return;
+}
+
+// With member function, CPP will pass as a parameter, an instance of your class
+// so this-> can be used
+
+// this pointer is not passed for a non member function, so you can't
+// use this-> here
+int	Sample::getNbInst(void)
+{
+	return Sample::_nbInst;
+}
+
+// this is the only way to initialise a non member attribute (static attribute)
+// this is initialised without an instance being created
+int	Sample::_nbInst = 0;
+```
+***Exemplo: main.cpp***
+```cpp
+#include <iostream>
+#include "Sample.class.hpp"
+
+void f0(void)
+{
+	Sample instance;
+
+	std::cout << "Number of instances = " << instance.getNbInst() << std::endl;
+
+	return;
+}
+
+void f1(void)
+{
+	Sample instance;
+
+	std::cout << "Number of instances = " << instance.getNbInst() << std::endl;
+	f0();
+
+	return;
+}
+
+int main(void)
+{
+	std::cout << "Number of instances = " << Sample::getNbInst() << std::endl;
+	f1();
+	std::cout << "Number of instances = " << Sample::getNbInst() << std::endl;
+
+	return 0;
+}
+```
+***Output***
+```bash
+Number of instances = 0
+Constructor called
+Number of instances = 1
+Constructor called
+Number of instances = 2
+Destructor called
+Destructor called
+Number of instances = 0
+```
+
+## Pointers to members
+- Para ter um ponteiro para membros de dados e funções de membros, você precisa torná-los públicos.
+***Exemplo: Sample.class.hpp***
+```cpp
+#ifndef SAMPLE_CLASS_H
+# define SAMPLE_CLASS_H
+
+class Sample
+{
+public:
+
+	int foo;
+
+	Sample(void);
+	~Sample(void);
+
+	void bar(void) const;
+
+};
+
+#endif
+```
+***Exemplo: Sample.class.cpp***
+```cpp
+#include <iostream>
+#include "Sample.class.hpp"
+
+Sample::Sample(void) : foo(0)
+{
+	std::cout << "Constructor called" << std::endl;
+	return;
+}
+
+Sample::~Sample(void)
+{
+	std::cout << "Destructor called" << std::endl;
+	return;
+}
+
+void Sample::bar(void) const
+{
+	std::cout << "Member function bar called" << std::endl;
+	return;
+}
+```
+***Exemplo: main.cpp***
+```cpp
+#include <iostream>
+#include "Sample.class.hpp"
+
+int main(void)
+{
+	// allocated on the stack
+	Sample instance;
+	// declared a pointer to the address of instance, \
+	// which is stored in a variable (instancep)
+	Sample * instancep = &instance;
+
+	// declaring a pointer on an interger attribute of a Sample class
+	int Sample::*p = NULL;
+	// declaring a pointer on a const member function of a Sample class
+	void (Sample::*f)(void) const;
+
+	p = &Sample::foo; // this is not specific about which instance that p refers to
+
+	std::cout << "Value of member foo = " << instance.foo << std::endl;
+	// .* operator to specify the instance that p refers to
+	instance.*p = 21; // directly using the instance
+	std::cout << "Value of member foo = " << instance.foo << std::endl;
+	instancep->*p = 42; // pointer to an instance
+	std::cout << "Value of member foo = " << instance.foo << std::endl;
+
+	f = &Sample::bar; // can't tell which instance that it's refering to
+
+	(instance.*f)(); // use .* operator to specify the specify
+	(instancep->*f)(); // or use ->* a pointer to refer to the instance
+
+	return 0;
+}
+```
+***Output***
+```bash
+Constructor called
+Value of member foo = 0
+Value of member foo = 21
+Value of member foo = 42
+Member function bar called
+Member function bar called
+Destructor called
+```
+
+

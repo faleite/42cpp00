@@ -1,6 +1,22 @@
- # CPP 00
- 
- ## Namespaces
+# C++
+***(Modulo 00)***
+
+* ## Index
+  1. **[Namespaces](#namespaces)**
+  2. **[Stdio streams](#stdio-streams)**
+  3. **[Class and instance](#class-and-instance)**
+  4. **[Member attributes and member function](#member-attributes-and-member-function)**
+  5. **[This 'pointer' (the keyword self)](#this-pointer-the-keyword-self)**
+  6. **[Initialization list](#initialization-list)**
+  7. **[Const](#const)**
+  8. **[Visibility](#visibility)**
+  9. **[Class vs struct](#class-vs-struct)**
+  10. **[Accessors (getters and setters)](#accessors-getters-and-setters)**
+  11. **[Comparisons (estrutural vs. física)](#comparisons-estrutural-vs-física)**
+  12. **[Non member attributes and non member functions](#non-member-attributes-and-non-member-functions)**
+  13. **[Pointers to members](#pointers-to-members)**
+
+## Namespaces
 - **Namespaces** são usados para organizar o código em grupos lógicos e evitar conflitos de nomes em grandes projetos. Eles permitem que você defina um escopo que contém identificadores (nomes de variáveis, tipos, funções, etc.) de forma que esses identificadores não colidam com nomes iguais definidos em outros escopos ou namespaces. Isso é particularmente útil em projetos grandes ou ao utilizar várias bibliotecas que podem ter definido os mesmos nomes para suas funções ou variáveis.
 - Todas as entidades incluídas no `C++ standard library` estão incluídas no stdnamespace
 - No entanto, `using namespace std` é considerada uma má prática, pois importa todo o `std` namespace para o namespace atual do programa. É melhor usar o operador de resolução de escopo para acessar a entidade específica (como `std::cout`)
@@ -82,6 +98,7 @@ int main() {
     return 0;
 }
 ```
+[↑ Index ↑](#index)
 
 ## Stdio streams
 - `iostream` é uma biblioteca padrão do C++ que fornece objetos de fluxo de entrada e saída.
@@ -106,6 +123,7 @@ int main(void)
 	return 0;
 }
 ```
+[↑ Index ↑](#index)
 
 ## Class and instance
 - C++ é uma linguagem de programação orientada a objetos. Um objeto é criado a partir de uma classe. Tudo em C++ está associado a classes e objetos, junto com seus atributos( variables) e métodos( functions)
@@ -170,6 +188,7 @@ int	main(void)
 Constructor called
 Destructor called
 ```	
+[↑ Index ↑](#index)
 
 ## Member attributes and member function
 - `Member attributes` são variáveis que são declaradas dentro de uma classe e e pode usar em uma instância desta classe. Eles são acessíveis a qualquer função que pertença à classe.
@@ -239,6 +258,7 @@ int main() {
 Volume of Box1: 210
 Volume of Box2: 1560
 ```
+[↑ Index ↑](#index)
 
 ## This 'pointer' (the keyword self)
 - `this` é um ponteiro que aponta para o objeto atual. `this` é um ponteiro constante que mantém o endereço do objeto atual. Em C++, cada objeto obtém sua própria cópia dos membros dos dados e todos os objetos compartilham uma única cópia das funções-membro. Para se referir à sua instância atual, use o ponteiro de instância especial `this`.
@@ -306,6 +326,7 @@ this->a2 = 42
 this->a3 = 4.2
 Destructor called
 ```
+[↑ Index ↑](#index)
 
 ## Const
 - `const` é uma palavra-chave em C++ que é usada para tornar uma variável constante. Uma variável constante é uma variável cujo valor não pode ser alterado. Uma variável constante deve ser inicializada no momento da declaração.
@@ -388,6 +409,7 @@ this->pi = 3.14
 this->qd = 42
 Destructor called
 ```
+[↑ Index ↑](#index)
 
 ## Visibility
 - `Visibility` é uma propriedade de um membro de uma classe que determina se ele pode ser acessado de fora da classe. Existem três tipos de visibilidade em C++: `public`, `private` e `protected`.
@@ -501,6 +523,7 @@ instance.publicFoo = 42
 Member function publicBar called
 Destructor called
 ```
+[↑ Index ↑](#index)
 
 ## Class vs struct
 - `Class` e `struct` são usados para definir classes em C++. A única diferença entre `class` e `struct` é que a visibilidade padrão de membros e bases de classe é `private` em `class` e `public` em `struct`.
@@ -602,6 +625,7 @@ instance.getFoo() = 42
 instance.getFoo() = 42
 Destructor called
 ```
+[↑ Index ↑](#index)
 
 ## Comparisons (estrutural vs. física)
 - Existem `structural` igualdade e `physical` igualdade.
@@ -706,6 +730,7 @@ instance 1 and instance 2 are structurally equal
 Destructor called
 Destructor called
 ```
+[↑ Index ↑](#index)
 
 ## Non member attributes and non member functions
 - `member attributes` e `member functions` estão presentes dentro de uma classe. Significa que a classe precisa ser instanciada, para poder utilizar este atributo/função. Cada atributo será diferente em cada instância.
@@ -819,6 +844,7 @@ Destructor called
 Destructor called
 Number of instances = 0
 ```
+[↑ Index ↑](#index)
 
 ## Pointers to members
 - Para ter um ponteiro para membros de dados e funções de membros, você precisa torná-los públicos.
@@ -910,5 +936,4 @@ Member function bar called
 Member function bar called
 Destructor called
 ```
-
-
+[↑ Index ↑](#index)

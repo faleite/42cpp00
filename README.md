@@ -16,12 +16,13 @@ Object Oriented Programming!*
 [**Imperative programming**] [**Object-oriented programming**] [**Rigor**] | **Subscribed :atom:**
 <!-- **:white_check_mark: 100%** -->
 
-* ### [Introduction](#introduction)
+* **[Introduction](#introduction)**
   * **[General rules](#general-rules)**
   * **[design requirements](#alguns-requisitos-de-design)**
   * **[Read me](#read-me)**
-* ### [Roadmap](./dcs/roadmap.md)
-* ### [Study resources](#study-resources-1)
+* **[Wiki](https://github.com/faleite/42cpp00/wiki/Module-I)**
+* **[Roadmap](https://faleite.github.io/cpp)**
+* **[Study resources](#study-resources-1)**
 <!-- * ### [Usage]() -->
 <!-- * ### [Workflow](#workflow-1) -->
 <!-- * ### [Tools](#tools-1) -->

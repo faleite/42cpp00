@@ -39,15 +39,15 @@ Object Oriented Programming!*
 - A menos que especificado de outra forma, todas as mensagens de saída devem ser finalizadas com uma nova linha caractere e exibido na saída padrão.
 - **Adeus Norminette!** Nenhum estilo de codificação é imposto nos módulos C++.
 - Você tem permissão para usar quase tudo da biblioteca padrão.
-- Você não pode usar nenhuma outra biblioteca externa. C++ 11 (e derivadas) e bibliotecas Boost são proibidas. As seguintes funções também são proibidas: ***printf(), *alloc() e free()***.
+- Você não pode usar nenhuma outra biblioteca externa. C++ 11 (e derivadas) e bibliotecas Boost são proibidas. As seguintes funções também são proibidas: **\* printf(), \* alloc() e free()**.
 - A menos que seja explicitamente declarado o contrário, o uso de *namespace* `<ns_name>` e friend keywords amigo são proibidos.
 - **É permitido utilizar o STL somente nos Módulos 08 e 09**. Isso significa: nenhum **Contêiner** (vector/list/map/ e assim por diante) e nenhum **algoritmo** (qualquer coisa que exija a inclusão do cabeçalho `<algorithm>`) até então.
 
 ### Alguns requisitos de design
 - O vazamento de memória também ocorre em C++. Ao alocar memória (usando a palavra-chave **new**), você deve evitar **memory leaks**.
 - Do Módulo 02 ao Módulo 09, suas classes deverão ser elaboradas na **Forma Canônica Ortodoxa**, ***exceto quando explicitamente indicado o contrário***.
-- Qualquer implementação de função colocada em um arquivo de cabeçalho (exceto modelos de função) significa 0 para o exercício.
-- Você deve ser capaz de usar cada um dos seus cabeçalhos independentemente dos outros. Assim, eles devem incluir todas as dependências de que necessitam. No entanto, você eve evitar o problema de dupla inclusão adicionando **include guards** Caso contrário, sua nota será 0.
+- Qualquer implementação de função colocada em um arquivo de cabeçalho (exceto função template) significa 0 para o exercício.
+- Você deve ser capaz de usar cada um dos seus cabeçalhos independentemente dos outros. Assim, eles devem incluir todas as dependências de que necessitam. No entanto, você deve evitar o problema de dupla inclusão adicionando **include guards** Caso contrário, sua nota será 0.
 
 ### Read me
 - Você pode adicionar alguns arquivos adicionais se precisar (ou seja, para dividir seu código). Como essas atribuições não são verificadas por um programa, fique à vontade para fazê-lo, desde que entregue os arquivos obrigatórios.

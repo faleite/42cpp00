@@ -6,7 +6,7 @@
 #    By: faaraujo <faaraujo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 18:48:56 by faaraujo          #+#    #+#              #
-#    Updated: 2024/05/23 18:01:09 by faaraujo         ###   ########.fr        #
+#    Updated: 2024/05/23 16:02:14 by faaraujo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 #******************************************************************************#
 
 NAME = megaphone
-CXX = c++
+CPP = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = megaphone.cpp
 OBJS = $(SRC:.cpp=.o)
@@ -30,7 +30,7 @@ $(NAME): $(OBJS)
 	@echo "$(PURPLE)====================================$(CLR_RESET)"
 	@echo "$(GREEN)Compiling of $(RED)$(NAME)...$(CLR_RESET)"
 	
-	$(CXX) $(FLAGS) $(OBJS) -o $(NAME)
+	$(CPP) $(FLAGS) $(OBJS) -o $(NAME)
 	
 	@echo "$(RED)$(NAME) $(GREEN)is ready!$(CLR_RESET)"
 	@echo "$(PURPLE)====================================$(CLR_RESET)"

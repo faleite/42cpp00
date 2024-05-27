@@ -22,7 +22,7 @@ Object Oriented Programming!*
   * **[Read me](#read-me)**
 * **[Wiki](https://github.com/faleite/42cpp00/wiki/Module-I)**
 * **[Roadmap](https://faleite.github.io/cpp)**
-* **[Study resources](#study-resources-1)**
+* **[Study resources](#study-resources)**
 <!-- * ### [Usage]() -->
 <!-- * ### [Workflow](#workflow-1) -->
 <!-- * ### [Tools](#tools-1) -->

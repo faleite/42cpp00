@@ -6,7 +6,7 @@
 /*   By: faaraujo <faaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 20:28:20 by faaraujo          #+#    #+#             */
-/*   Updated: 2024/05/27 20:29:00 by faaraujo         ###   ########.fr       */
+/*   Updated: 2024/05/28 20:48:22 by faaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,12 @@
  *     this->firstName = firstName;
  * }
 */
-void Contact::setContact(std::string (&arr)[5])
-{
-	this->firstName = arr[0];
-	this->lastName = arr[1];
-	this->nickName = arr[2];
-	this->phoneNumber = arr[3];
-	this->darkSecret = arr[4];
-}
+// void Contact::setContact(std::string (&arr)[5])
+// {
+// 	this->firstName = arr[0];
+// 	this->lastName = arr[1];
+// 	this->nickName = arr[2];
+// 	this->phoneNumber = arr[3];
+// 	this->darkSecret = arr[4];
+// }
+

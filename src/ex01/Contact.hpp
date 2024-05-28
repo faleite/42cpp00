@@ -6,7 +6,7 @@
 /*   By: faaraujo <faaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 19:53:09 by faaraujo          #+#    #+#             */
-/*   Updated: 2024/05/27 21:02:05 by faaraujo         ###   ########.fr       */
+/*   Updated: 2024/05/28 20:43:37 by faaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,18 @@
 */
 class Contact
 {
-	private:
+	public:
 		std::string	firstName;
 		std::string	lastName;
 		std::string	nickName;
 		std::string	phoneNumber;
 		std::string	darkSecret;
-	public:
-		void	setContact(std::string (&arr)[5]);
-		void	printContact();
-		void	printPhoneBook();
+		Contact() : firstName(""), lastName(""), nickName(""), 
+					phoneNumber(""), darkSecret("") {};
+		
+		// void	setContact(std::string (&arr)[5]);
+		// void	printContact();
+		// void	printPhoneBook();
 	
 };
 

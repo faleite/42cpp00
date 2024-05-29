@@ -197,3 +197,5 @@ a->b |Membro b do objeto apontado por a |(*a).b
 
 ## [Union](https://cplusplus.com/doc/oldtutorial/other_data_types/)
 
+## [`setw()` da lib `<iomanip>`](https://cplusplus.com/reference/iomanip/setw/)
+- `setw()` Define a largura (width) do campo a ser usada nas operações de saída. Usada para definir a largura do campo de saída para o próximo elemento a ser exibido no stream (como `std::cout`). Ele garante que a saída ocupe pelo menos a largura especificada, preenchendo com espaços em branco, se necessário.

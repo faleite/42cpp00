@@ -6,7 +6,7 @@
 /*   By: faaraujo <faaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 19:53:09 by faaraujo          #+#    #+#             */
-/*   Updated: 2024/05/28 20:43:37 by faaraujo         ###   ########.fr       */
+/*   Updated: 2024/05/29 18:49:36 by faaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,22 +28,22 @@
  * tudo o que sempre será usado dentro de uma classe é privado e que
  * tudo o que pode ser usado fora de uma classe é público.
 */
-class Contact
-{
-	public:
-		std::string	firstName;
-		std::string	lastName;
-		std::string	nickName;
-		std::string	phoneNumber;
-		std::string	darkSecret;
-		Contact() : firstName(""), lastName(""), nickName(""), 
-					phoneNumber(""), darkSecret("") {};
+// class Contact
+// {
+// 	public:
+// 		std::string	firstName;
+// 		std::string	lastName;
+// 		std::string	nickName;
+// 		std::string	phoneNumber;
+// 		std::string	darkSecret;
+// 		Contact() : firstName(""), lastName(""), nickName(""), 
+// 					phoneNumber(""), darkSecret("") {};
 		
-		// void	setContact(std::string (&arr)[5]);
-		// void	printContact();
-		// void	printPhoneBook();
+// 		// void	setContact(std::string (&arr)[5]);
+// 		// void	printContact();
+// 		// void	printPhoneBook();
 	
-};
+// };
 
 /**
  * @brief Na inicialização do programa, a agenda está vazia e o usuário é

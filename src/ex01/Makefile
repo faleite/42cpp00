@@ -6,7 +6,7 @@
 #    By: faaraujo <faaraujo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 18:48:56 by faaraujo          #+#    #+#              #
-#    Updated: 2024/05/28 20:02:18 by faaraujo         ###   ########.fr        #
+#    Updated: 2024/05/29 19:54:54 by faaraujo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,14 @@
 #                                 VARIABLES                                    #
 #******************************************************************************#
 
-NAME = megaphone
+NAME = phonebook
 CXX = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = megaphone.cpp
+FLAGS = -Wall -Wextra -Werror -std=c++98 -g
+SRC = PhoneBook.cpp main.cpp
 OBJS = $(SRC:.cpp=.o)
+
+# .c.o:
+# 	$(CXX) -c $(FLAGS) $< -o $@
 
 #******************************************************************************#
 #                                 SCRIPT                                       #

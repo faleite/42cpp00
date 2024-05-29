@@ -6,38 +6,26 @@
 /*   By: faaraujo <faaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 20:54:38 by faaraujo          #+#    #+#             */
-/*   Updated: 2024/05/28 20:55:05 by faaraujo         ###   ########.fr       */
+/*   Updated: 2024/05/29 19:31:25 by faaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-void	printHeader(void)
-{
-	std::cout << " _____________________________________________________________________" << std::endl;
-	std::cout << "|                                                                     |" << std::endl;
-	std::cout << "|************************** PHONEBOOK APP ****************************|" << std::endl;
-	std::cout << "|*********************************************************************|" << std::endl;
-	std::cout << "|************************** Instructions: ****************************|" << std::endl;
-	std::cout << "| Save Contact:  ADD | Search Contact:  SEARCH | Phonebook end:  EXIT |" << std::endl;
-	std::cout << "|_____________________________________________________________________|" << std::endl;
-}
-
 int	main(void)
 {
+	PhoneBook phonebook;
 	std::string command;
-	Contact contact;
 	
-	printHeader();
-	
+	phonebook.printHeader();		
 	while(true)
 	{
-		std::cout << "INSERT COMMAND: ";
-		std::cin >> command;
+		std::cout << std::endl << "INSERT COMMAND: ";
+		std::cin >> command, std::cout << std::endl;
 		if (command == "ADD" || command == "add")
-			contact.Add();
+			phonebook.Add();
 		else if (command == "SEARCH" || command == "search")
-			contact.Search();
+			phonebook.Search();
 		else if (command == "EXIT" || command == "exit")
 			return (0);
 		else

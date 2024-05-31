@@ -6,7 +6,7 @@
 /*   By: faaraujo <faaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:32:34 by faaraujo          #+#    #+#             */
-/*   Updated: 2024/05/22 19:29:00 by faaraujo         ###   ########.fr       */
+/*   Updated: 2024/05/31 19:49:20 by faaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,7 @@ int	main(int argc, char *argv[])
 	else
 	{
 		for (int i = 1; i < argc; i++)
-		{
 			std::cout << StringUppercase(argv[i]);
-			if (i < argc - 1)
-				std::cout << " ";
-		}
 		std::cout << std::endl;
 	}
 	return (0);

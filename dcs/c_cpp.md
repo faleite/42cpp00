@@ -199,3 +199,22 @@ a->b |Membro b do objeto apontado por a |(*a).b
 
 ## [`setw()` da lib `<iomanip>`](https://cplusplus.com/reference/iomanip/setw/)
 - `setw()` Define a largura (width) do campo a ser usada nas operações de saída. Usada para definir a largura do campo de saída para o próximo elemento a ser exibido no stream (como `std::cout`). Ele garante que a saída ocupe pelo menos a largura especificada, preenchendo com espaços em branco, se necessário.
+
+## Conceito de Composição
+**Composição** é um princípio da POO onde uma classe é composta por uma ou mais instâncias de outras classes. Isso representa um relacionamento "tem-um" (has-a) entre as classes. No seu exemplo, a `PhoneBook` tem um array de `Contacts`, o que significa que um `PhoneBook` é composto por múltiplos `Contacts`.
+
+### Significado em Detalhes
+1. Encapsulamento de Dados:
+  - A classe `PhoneBook` encapsula um array de objetos da classe Contact. Isso significa que todos os dados de contato são armazenados e gerenciados dentro de uma instância da classe PhoneBook.
+  - `contacts[8]` é um array privado de Contact dentro da PhoneBook, significando que a PhoneBook gerencia até 8 contatos.
+
+2. Reusabilidade:
+  - A classe Contact pode ser reutilizada em outras partes do código ou em outros projetos sem precisar ser modificada. Ela define claramente os atributos de um contato, o que a torna modular e reutilizável.
+  - A PhoneBook pode usar a Contact sem precisar redefinir seus atributos.
+
+3. Abstração:
+  - A PhoneBook abstrai o conceito de uma lista de contatos e as operações associadas (adicionar, listar, buscar). O usuário da PhoneBook não precisa saber como os Contacts são armazenados ou gerenciados internamente.
+  - A implementação dos métodos addContact, listContacts, showContact, Add, e Search lida com os detalhes de manipulação dos objetos Contact.
+
+4. Organização do Código:
+  - Separar a lógica de contato (Contact) da lógica de gerenciamento de contatos (PhoneBook) torna o código mais organizado, modular e fácil de manter.

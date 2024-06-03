@@ -18,7 +18,7 @@
 
 ## Namespaces
 - **Namespaces** são usados para organizar o código em grupos lógicos e evitar conflitos de nomes em grandes projetos. Eles permitem que você defina um escopo que contém identificadores (nomes de variáveis, tipos, funções, etc.) de forma que esses identificadores não colidam com nomes iguais definidos em outros escopos ou namespaces. Isso é particularmente útil em projetos grandes ou ao utilizar várias bibliotecas que podem ter definido os mesmos nomes para suas funções ou variáveis.
-- Todas as entidades incluídas no `C++ standard library` estão incluídas no stdnamespace
+- Todas as entidades incluídas no `C++ standard library` estão incluídas no **std** namespace
 - No entanto, `using namespace std` é considerada uma má prática, pois importa todo o `std` namespace para o namespace atual do programa. É melhor usar o operador de resolução de escopo para acessar a entidade específica (como `std::cout`)
 
 ***Exemplo 1***

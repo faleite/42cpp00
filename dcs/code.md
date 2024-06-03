@@ -6,6 +6,23 @@
 - https://cplusplus.com/reference/iomanip/setw/
 - https://chatgpt.com/c/4e79a76f-b1c5-45bc-9268-f699a3653aa6
 
+## Hello World
+```cpp
+#include <iostream>
+
+int main(void)
+{
+    char    buff[512];
+
+    std::cout << "Hello Wolrd!" << std::endl;
+    std::cout << "Digit one word: ";
+    std::cin >> buff;
+    std::cin >> buff;
+    std::cout << "You entered: [" << buff << "]" << std::endl; 
+    return (0);
+}
+```
+
 ## Exercício 00
 ```cpp
 #include <iostream>

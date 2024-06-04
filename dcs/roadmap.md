@@ -29,3 +29,18 @@ non member functions***](https://github.com/faleite/42cpp00/wiki/Module-I#non-me
 - [***Pointers to members***](https://github.com/faleite/42cpp00/wiki/Module-I#pointers-to-members)
 
 ### ==**cpp ::: 01**== <!-- markmap: foldAll -->
+- **[Memory allocation](https://github.com/faleite/42cpp00/wiki/Module-II#memory-allocation)**
+- **[Stack vs heap memory](https://github.com/faleite/42cpp00/wiki/Module-II#stack-vs-heap-memory)**
+- **[Pointers to members](https://github.com/faleite/42cpp00/wiki/Module-II#pointers-to-members)**
+- **[Reference](https://github.com/faleite/42cpp00/wiki/Module-II#reference)**
+- **[Lifetime](https://github.com/faleite/42cpp00/wiki/Module-II#lifetime)**
+- **[Scope](https://github.com/faleite/42cpp00/wiki/Module-II#scope)**
+- **[Constant class instance in another class](https://github.com/faleite/42cpp00/wiki/Module-II#constant-class-instance-in-another-class)**
+- **[Destructor called without a constructor](https://github.com/faleite/42cpp00/wiki/Module-II#destructor-called-without-a-constructor)**
+- **[Streams](https://github.com/faleite/42cpp00/wiki/Module-II#streams)**
+- **[Data transfer modes](https://github.com/faleite/42cpp00/wiki/Module-II#data-transfer-modes)**
+- **[Text mode operations](https://github.com/faleite/42cpp00/wiki/Module-II#text-mode-operations)**
+- **[Advantages of using streams](https://github.com/faleite/42cpp00/wiki/Module-II#advantages-of-using-streams)**
+- **[File streams](https://github.com/faleite/42cpp00/wiki/Module-II#file-streams)**
+- **[Creating file objects](https://github.com/faleite/42cpp00/wiki/Module-II#creating-file-objects)**
+- **[Switch statement](https://github.com/faleite/42cpp00/wiki/Module-II#switch-statement)**

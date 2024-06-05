@@ -6,7 +6,7 @@
 /*   By: faaraujo <faaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 20:54:38 by faaraujo          #+#    #+#             */
-/*   Updated: 2024/05/31 19:38:10 by faaraujo         ###   ########.fr       */
+/*   Updated: 2024/06/05 19:57:44 by faaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ int	main(void)
 	while(true)
 	{
 		std::cout << std::endl << "INSERT COMMAND: ";
-		std::cin >> command; std::cout << std::endl;
+		std::cin >> command;
+		std::cout << std::endl;
 		command = StringUppercase(command);
 		if (command == "ADD")
 			phonebook.Add();

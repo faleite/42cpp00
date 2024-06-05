@@ -6,7 +6,7 @@
 #    By: faaraujo <faaraujo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 18:48:56 by faaraujo          #+#    #+#              #
-#    Updated: 2024/05/31 18:27:45 by faaraujo         ###   ########.fr        #
+#    Updated: 2024/06/05 21:29:01 by faaraujo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,12 @@
 
 NAME = phonebook
 CXX = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98 -g
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 SRC = PhoneBook.cpp main.cpp
 OBJS = $(SRC:.cpp=.o)
 
 # .c.o:
-# 	$(CXX) -c $(FLAGS) $< -o $@
+# 	$(CXX) -c $(CXXFLAGS) $< -o $@
 
 #******************************************************************************#
 #                                 SCRIPT                                       #
@@ -33,7 +33,7 @@ $(NAME): $(OBJS)
 	@echo "$(PURPLE)====================================$(CLR_RESET)"
 	@echo "$(GREEN)Compiling of $(RED)$(NAME)...$(CLR_RESET)"
 	
-	$(CXX) $(FLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 	
 	@echo "$(RED)$(NAME) $(GREEN)is ready!$(CLR_RESET)"
 	@echo "$(PURPLE)====================================$(CLR_RESET)"

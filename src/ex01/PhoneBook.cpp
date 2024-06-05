@@ -6,7 +6,7 @@
 /*   By: faaraujo <faaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 20:40:41 by faaraujo          #+#    #+#             */
-/*   Updated: 2024/06/05 16:15:50 by faaraujo         ###   ########.fr       */
+/*   Updated: 2024/06/05 17:27:46 by faaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	PhoneBook::Search(void)
 	index--;
 	if (contactIndex == 0)
 		std::cout << "Phonebook is empty!" << std::endl;
-	else if (index < 0 || index > contactIndex)
+	else if (index < 0 || index >= contactIndex)
 		std::cout << "Ivalid index!" << std::endl;
 	else
 		showContact(index);		

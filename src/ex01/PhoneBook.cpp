@@ -6,7 +6,7 @@
 /*   By: faaraujo <faaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 20:40:41 by faaraujo          #+#    #+#             */
-/*   Updated: 2024/06/05 17:27:46 by faaraujo         ###   ########.fr       */
+/*   Updated: 2024/06/06 21:04:08 by faaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,64 @@ PhoneBook::PhoneBook() : contactIndex(0) {}
 PhoneBook::~PhoneBook() { std::cout << "PhoneBook deteled!" << std::endl; }
 std::string	strlenCheck(std::string str);
 
+bool	whiteSpaces(const std::string &string)
+{
+	for (size_t i = 0; i < string.size(); ++i)
+	{
+		if (!std::isspace(string[i]))
+			return (false);
+	}
+	return (true);
+}
+
+bool	isDigit(const std::string &string)
+{
+	for (size_t i = 0; i < string.size(); ++i)
+	{
+		if (!std::isdigit(string[i]))
+			return (false);
+	}
+	return (true);
+}
+
+std::string	checkString(std::string string, std::string msg)
+{
+	std::cout << msg;
+	std::getline(std::cin, string);
+	while (string.empty() || whiteSpaces(string))
+    {
+        std::cerr << "Invalid input, try again!" << std::endl;
+        std::cout << msg;
+        std::getline(std::cin, string);
+		if (std::cin.eof())
+			return ("");
+    }
+	return (string);
+}
+
+std::string	checkNumber(std::string string, std::string msg)
+{
+	std::cout << msg;
+	std::getline(std::cin, string);
+	while (string.empty() || !isDigit(string))
+    {
+        std::cerr << "Invalid input, try again!" << std::endl;
+        std::cout << msg;
+        std::getline(std::cin, string);
+		if (std::cin.eof())
+			return ("");
+    }
+	return (string);
+}
 void	PhoneBook::addContact(size_t index)
 {
 	Contact &contact = contacts[index];
 	
-	std::cout << "First name: ";
-	std::cin >> contact.firstName;
-	std::cout << "Last name: ";
-	std::cin >> contact.lastName;
-	std::cout << "Nickname: ";
-	std::cin >> contact.nickName;
-	std::cout << "Phone number: ";
-	std::cin >> contact.phoneNumber;
-	std::cout << "Dark secret: ";
-	std::cin >> contact.darkSecret;
+	contact.firstName = checkString(contact.firstName, "First name: ");
+	contact.lastName = checkString(contact.lastName, "Last name: ");
+	contact.nickName = checkString(contact.nickName, "Nickname: ");
+	contact.phoneNumber = checkNumber(contact.phoneNumber, "Phone number: ");
+	contact.darkSecret = checkString(contact.darkSecret, "Dark secret: ");
 }
 
 /**
@@ -81,12 +125,17 @@ void	PhoneBook::showContact(size_t index)
 void	PhoneBook::Search(void)
 {
 	size_t	index(0);
+	std::string line;
+	// int index;
 	
 	printHeader();
 	for (size_t i = 0; i < contactIndex; i++)
 		listContacts(i);
 	std::cout << std::endl << "Insert index: ";
-	std::cin >> index;
+	// std::cin >> index;
+	std::getline(std::cin, line);
+	std::stringstream ss(line);
+	ss >> index;
 	index--;
 	if (contactIndex == 0)
 		std::cout << "Phonebook is empty!" << std::endl;

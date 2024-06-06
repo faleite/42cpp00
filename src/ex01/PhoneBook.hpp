@@ -6,7 +6,7 @@
 /*   By: faaraujo <faaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 16:12:24 by faaraujo          #+#    #+#             */
-/*   Updated: 2024/05/31 18:57:37 by faaraujo         ###   ########.fr       */
+/*   Updated: 2024/06/06 18:44:38 by faaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ class PhoneBook
 		Contact	contacts[8];
 		size_t	contactIndex;
 		void	addContact(size_t contactIndex);
+		// bool	addContact(size_t contactIndex);
 		void	listContacts(size_t contactIndex);
 		void	showContact(size_t contactIndex);
 

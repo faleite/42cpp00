@@ -6,7 +6,7 @@
 /*   By: faaraujo <faaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 20:54:38 by faaraujo          #+#    #+#             */
-/*   Updated: 2024/06/05 19:57:44 by faaraujo         ###   ########.fr       */
+/*   Updated: 2024/06/06 20:56:53 by faaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ int	main(void)
 	while(true)
 	{
 		std::cout << std::endl << "INSERT COMMAND: ";
-		std::cin >> command;
+		// std::cin >> command;
+		std::getline(std::cin, command);
+		if (std::cin.eof())
+			return (0);
 		std::cout << std::endl;
 		command = StringUppercase(command);
 		if (command == "ADD")
@@ -39,10 +42,10 @@ int	main(void)
 		else if (command == "EXIT")
 			return (0);
 		else
-			std::cerr << "---------- INVALID COMMAND ----------" << std::endl;
-		std::cin.clear();
-		std::cin.ignore(1000, '\n');
-		if (std::cin.eof())
-			return (0);
+			std::cerr << "---------- INVALID COMMAND ----------";
+		// std::cin.clear();
+		// std::cin.ignore(1000, '\n');
+		// if (std::cin.eof())
+		// 	return (0);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: faaraujo <faaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 20:54:38 by faaraujo          #+#    #+#             */
-/*   Updated: 2024/06/06 20:56:53 by faaraujo         ###   ########.fr       */
+/*   Updated: 2024/06/07 15:53:50 by faaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	main(void)
 	while(true)
 	{
 		std::cout << std::endl << "INSERT COMMAND: ";
-		// std::cin >> command;
 		std::getline(std::cin, command);
 		if (std::cin.eof())
 			return (0);
@@ -43,9 +42,5 @@ int	main(void)
 			return (0);
 		else
 			std::cerr << "---------- INVALID COMMAND ----------";
-		// std::cin.clear();
-		// std::cin.ignore(1000, '\n');
-		// if (std::cin.eof())
-		// 	return (0);
 	}
 }

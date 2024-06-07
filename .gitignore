@@ -21,7 +21,7 @@ test.cpp
 # Compiled Dynamic libraries
 *.so
 *.dylib
-*.dll
+*.dll.vscode/settings.json
 
 # Fortran module files
 *.mod

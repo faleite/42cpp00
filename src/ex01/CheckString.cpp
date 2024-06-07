@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contactTools.cpp                                   :+:      :+:    :+:   */
+/*   CheckString.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faaraujo <faaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/07 16:00:14 by faaraujo          #+#    #+#             */
-/*   Updated: 2024/06/07 16:02:39 by faaraujo         ###   ########.fr       */
+/*   Created: 2024/06/07 20:41:32 by faaraujo          #+#    #+#             */
+/*   Updated: 2024/06/07 20:55:21 by faaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-void	PhoneBook::printHeader(void)
+void	printHeader(void)
 {
 	std::cout << " _________________________________________________________________" << std::endl;
 	std::cout << "|                                                                 |" << std::endl;
@@ -31,17 +31,7 @@ void	PhoneBook::printHeader(void)
 	std::cout << std::endl;
 }
 
-std::string	strlenCheck(std::string str)
-{
-	if (str.length() > 9)
-	{
-		str = str.substr(0, 9);
-		str = str + ".";
-	}
-	return (str);
-}
-
-inline bool	whiteSpaces(const std::string &string)
+bool	whiteSpaces(const std::string &string)
 {
 	for (size_t i = 0; i < string.size(); ++i)
 	{
@@ -51,14 +41,14 @@ inline bool	whiteSpaces(const std::string &string)
 	return (false);
 }
 
-inline bool	isDigit(const std::string &string)
+bool	isDigit(const std::string &string)
 {
 	for (size_t i = 0; i < string.size(); ++i)
 	{
-		if (std::isdigit(string[i]))
-			return (true);
+		if (!std::isdigit(string[i]))
+			return (false);
 	}
-	return (false);
+	return (true);
 }
 
 std::string	checkString(std::string string, std::string msg)

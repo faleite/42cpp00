@@ -6,7 +6,7 @@
 #    By: faaraujo <faaraujo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 18:48:56 by faaraujo          #+#    #+#              #
-#    Updated: 2024/06/07 16:22:04 by faaraujo         ###   ########.fr        #
+#    Updated: 2024/06/07 20:55:45 by faaraujo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@
 NAME = phonebook
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
-SRC = PhoneBook.cpp contactTools.cpp main.cpp
+SRC = PhoneBook.cpp Contact.cpp CheckString.cpp main.cpp
 OBJS = $(SRC:.cpp=.o)
 
 #******************************************************************************#

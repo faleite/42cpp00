@@ -6,7 +6,7 @@
 /*   By: faaraujo <faaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 18:10:58 by faaraujo          #+#    #+#             */
-/*   Updated: 2024/06/07 20:53:43 by faaraujo         ###   ########.fr       */
+/*   Updated: 2024/06/10 16:29:08 by faaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ class Contact
 		void		setContact(std::string first, std::string last,
 					std::string nick, std::string phone, std::string secret);
 		void		printContacts(size_t index);
-		void		printSearchContact(size_t index);
+		void		printSearchContact();
 		std::string	strlenCheck(const std::string &str);
 };

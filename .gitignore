@@ -124,6 +124,7 @@ tags
 [._]*.un~
 
 ### VisualStudioCode ###
+.vscode/settings.json
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json

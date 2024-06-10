@@ -6,7 +6,7 @@
 /*   By: faaraujo <faaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 20:40:41 by faaraujo          #+#    #+#             */
-/*   Updated: 2024/06/07 20:34:48 by faaraujo         ###   ########.fr       */
+/*   Updated: 2024/06/10 16:28:37 by faaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,5 @@ void	PhoneBook::showContact(size_t index)
 {
 	Contact &contact = contacts[index];
 
-	contact.printSearchContact(index);
+	contact.printSearchContact();
 }

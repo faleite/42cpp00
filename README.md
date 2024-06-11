@@ -13,8 +13,7 @@ Object Oriented Programming!*
 
  Skills | Grade |
 :------:|:-----:|
-[**Imperative programming**] [**Object-oriented programming**] [**Rigor**] | **Subscribed :atom:**
-<!-- **:white_check_mark: 100%** -->
+[**Imperative programming**] [**Object-oriented programming**] [**Rigor**] | **:white_check_mark: 100%**
 
 * **[Introduction](#introduction)**
   * **[General rules](#general-rules)**

@@ -19,7 +19,7 @@ Object Oriented Programming!*
   * **[General rules](#general-rules)**
   * **[design requirements](#alguns-requisitos-de-design)**
   * **[Read me](#read-me)**
-* **[Wiki](https://github.com/faleite/42cpp00/wiki)**
+* **[Wiki](https://github.com/faleite/42cpp00/wiki/Module-I)**
 * **[Roadmap](https://faleite.github.io/cpp)**
 * **[Study resources](#study-resources)**
 <!-- * ### [Usage]() -->

@@ -22,9 +22,21 @@ Object Oriented Programming!*
 * **[Wiki](https://github.com/faleite/42cpp00/wiki)**
 * **[Roadmap](https://faleite.github.io/cpp)**
 * **[Study resources](#study-resources)**
-<!-- * ### [Usage]() -->
-<!-- * ### [Workflow](#workflow-1) -->
-<!-- * ### [Tools](#tools-1) -->
+<details>
+  <summary><b>Modules</b></summary>
+
+* **[cpp00](https://github.com/faleite/CPP_42_School)**
+* **[cpp01](https://github.com/faleite/42cpp01)**
+* **[cpp02](https://github.com/faleite/42cpp02)**
+* **[cpp03](https://github.com/faleite/42cpp03)**
+* **[cpp04](https://github.com/faleite/42cpp04)**
+* **[cpp05](https://github.com/faleite/42cpp05)**
+* **[cpp06](https://github.com/faleite/42cpp06)**
+* **[cpp07](https://github.com/faleite/42cpp07)**
+* **[cpp08](https://github.com/faleite/42cpp08)**
+* **[cpp09](https://github.com/faleite/42cpp09)**
+
+</details>
 
 ## Introduction
 

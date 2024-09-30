@@ -15,15 +15,8 @@ Object Oriented Programming!*
 :------:|:-----:|
 [**Imperative programming**] [**Object-oriented programming**] [**Rigor**] | **:white_check_mark: 100%**
 
-* **[Introduction](#introduction)**
-  * **[General rules](#general-rules)**
-  * **[design requirements](#alguns-requisitos-de-design)**
-  * **[Read me](#read-me)**
-* **[Wiki](https://github.com/faleite/42cpp00/wiki)**
-* **[Roadmap](https://faleite.github.io/cpp)**
-* **[Study resources](#study-resources)**
 <details>
-  <summary><b>Modules</b></summary>
+  <summary><b>All modules</b></summary>
 
 * **[cpp00](https://github.com/faleite/CPP_42_School)**
 * **[cpp01](https://github.com/faleite/42cpp01)**
@@ -37,6 +30,14 @@ Object Oriented Programming!*
 * **[cpp09](https://github.com/faleite/42cpp09)**
 
 </details>
+
+* **[Introduction](#introduction)**
+  * **[General rules](#general-rules)**
+  * **[design requirements](#alguns-requisitos-de-design)**
+  * **[Read me](#read-me)**
+* **[Wiki](https://github.com/faleite/42cpp00/wiki)**
+* **[Roadmap](https://faleite.github.io/cpp)**
+* **[Study resources](#study-resources)**
 
 ## Introduction
 
